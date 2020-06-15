@@ -7,7 +7,7 @@ using namespace std;
 struct xixi {
 	int begin, end;
 	int len;
-}p[100];
+}p[100];//存储活动数据
 
 int cmp(xixi &a, xixi  &b) {
 	return a.end < b.end;
@@ -22,10 +22,10 @@ int main() {
 		cin >> p[i].begin >> p[i].end;
 		p[i].len= p[i].end - p[i].begin;
 	}
-	sort(p, p + n, cmp);
+	sort(p, p + n, cmp);//按照截止时间排序
 
 	printf("安排：\n");
-	int date = p[0].end, sum = 1;
+	int date = p[0].end, sum = 1;//标记目前截止时间，选择活动数量
 
 	printf("%d---%d\n",p[0].begin,p[0].end);
 	for (int i = 1; i < n; i++) {
