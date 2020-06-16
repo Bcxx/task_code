@@ -32,7 +32,7 @@ void insert(int a, int b) {
 }
 
 void dfs(int a) {
-	if (a > n) {
+	if (a > n) {//叶子节点，输出整个着色方案
 		for (int i = 1; i <= n;i++) {
 			cout<<i<<':' << (char)(date[i]+'a'-1)<<' ';
 		}
@@ -44,13 +44,13 @@ void dfs(int a) {
 			int flag = 1;
 			xixi* j;
 			j = p[a];
-			while (j!=NULL) {
+			while (j!=NULL) {//查看相邻节点
 				if (date[j->n] == i) {
 					flag = 0; break;
 				}
 				j = j->next;
 			}
-			if (flag) {
+			if (flag) {//相邻节点没有用过这个颜色
 				date[a] = i;
 				dfs(a + 1);
 			}
