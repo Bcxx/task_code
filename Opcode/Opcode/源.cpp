@@ -51,6 +51,7 @@ int main() {
 	}
 	sort(p, p + n, cmp);//按照出现频率排序
 
+	//开始构建哈夫曼树；
 	xxx head,*end;
 	head.a = p[0];
 	head.next = NULL;
@@ -91,7 +92,8 @@ int main() {
 		}
 		beg = beg->next; beg = beg->next;
 	}
-	dfs(beg->a,0);
+
+	dfs(beg->a,0);//深搜输出结果
 
 
 	return 0;
